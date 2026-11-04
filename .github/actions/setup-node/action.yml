@@ -14,7 +14,7 @@ runs:
         node-version: ${{ inputs.node-version }}
     - name: Display Node Version
       shell: pwsh
-      run: node --version
+      run: node.cmd --version
     - name: Display NPM Version
       shell: pwsh
-      run: npm --version
+      run: npm.cmd --version
