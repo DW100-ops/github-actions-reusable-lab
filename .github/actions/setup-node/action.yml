@@ -14,9 +14,10 @@ runs:
         node-version: ${{ inputs.node-version }}
 
     - name: Display Node Version
-      shell: bash
+      shell: cmd
       run: node --version
 
     - name: Display NPM Version
-      shell: bash
+      shell: cmd
       run: npm --version
+
