@@ -16,13 +16,9 @@ runs:
     - name: Display Node Version
       shell: pwsh
       run: |
-        $nodePath = (Get-Command node).Source
-        Write-Host "Resolved node path: $nodePath"
-        & $nodePath --version
+        node --version
 
     - name: Display NPM Version
       shell: pwsh
       run: |
-        $npmPath = (Get-Command npm).Source
-        Write-Host "Resolved npm path: $npmPath"
-        & $npmPath --version
+        npm --version
