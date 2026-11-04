@@ -1,0 +1,8 @@
+﻿{
+  "name": "github-actions-reusable-lab",
+  "version": "1.0.0",
+  "description": "GitHub Actions reusable workflow lab",
+  "scripts": {
+    "test": "node test.js"
+  }
+}

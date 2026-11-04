@@ -1,0 +1,15 @@
+﻿name: Main CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  application-ci:
+    uses: ./.github/workflows/reusable-ci.yml
+    with:
+      node-version: '20'
