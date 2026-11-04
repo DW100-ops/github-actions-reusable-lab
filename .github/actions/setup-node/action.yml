@@ -12,9 +12,17 @@ runs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
+
     - name: Display Node Version
       shell: pwsh
-      run: node.cmd --version
+      run: |
+        $nodePath = (Get-Command node).Source
+        Write-Host "Resolved node path: $nodePath"
+        & $nodePath --version
+
     - name: Display NPM Version
       shell: pwsh
-      run: npm.cmd --version
+      run: |
+        $npmPath = (Get-Command npm).Source
+        Write-Host "Resolved npm path: $npmPath"
+        & $npmPath --version
