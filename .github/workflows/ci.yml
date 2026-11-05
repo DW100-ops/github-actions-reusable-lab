@@ -8,6 +8,6 @@ on:
 
 jobs:
   run-reusable-ci:
-    uses: ./.github/workflows/reusable-ci.yml
+    uses: DW100-ops/github-actions-reusable-lab/.github/workflows/reusable-ci.yml@main
     with:
       node-version: '22'
