@@ -12,6 +12,9 @@ on:
 jobs:
   build-and-test:
     runs-on: self-hosted
+    defaults:
+      run:
+        shell: cmd
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -21,10 +24,14 @@ jobs:
         with:
           node-version: ${{ inputs.node-version }}
 
+      - name: Run Code Linting
+        uses: ./.github/actions/lint
+
       - name: Install Dependencies
-        shell: cmd
         run: npm install
 
-      - name: Run Application Tests
-        shell: cmd
+      - name: Run Unit Tests
         run: npm test
+
+      - name: Run Integration Tests
+        run: npm run test:integration
