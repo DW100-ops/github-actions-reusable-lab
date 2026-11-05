@@ -1,16 +1,13 @@
-﻿name: Main CI Pipeline
+﻿name: Main Caller CI Pipeline
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
-  application-ci:
+  run-reusable-ci:
     uses: ./.github/workflows/reusable-ci.yml
     with:
-      node-version: '20'
+      node-version: '22'
